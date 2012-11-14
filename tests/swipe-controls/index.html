@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test - Load Webcam</title>
+	<script data-main="../../webcam" src="../../require.js"></script>
+	<style>
+		#box  {
+			background-color: #ff0000;
+			left: 200px;
+			padding: 50px;
+			position: absolute;
+			top: 200px;
+		}
+
+		canvas, video  {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">Move Me!</div>
+	<input type="text" name="slider-x" value="2000000">  
+	<input type="text" name="slider-y" value="2000000">
+
+	<script>
+		document.getElementsByTagName("body")[0].addEventListener("webcamSwipeLeft", left, true);
+		document.getElementsByTagName("body")[0].addEventListener("webcamSwipeRight", right, true);
+		document.getElementsByTagName("body")[0].addEventListener("webcamSwipeUp", up, true);
+		document.getElementsByTagName("body")[0].addEventListener("webcamSwipeDown", down, true);
+
+		function left() {
+			document.getElementById('box').style.left = "100px";
+			console.log("LEFT");
+		}
+
+		function right() {
+			document.getElementById('box').style.left = "300px";
+			console.log("RIGHT");
+		}
+
+		function up() {
+			document.getElementById('box').style.top = "100px";
+			console.log("UP");
+		}
+
+		function down() {
+			document.getElementById('box').style.top = "300px";
+			console.log("DOWN");
+		}
+	</script>
+</body>
+</html>
